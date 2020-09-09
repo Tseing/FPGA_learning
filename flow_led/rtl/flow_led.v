@@ -1,8 +1,8 @@
 module flow_led(
-	input sys_clk,	//系统时钟
-	input sys_rst_n,	//系统复位，低电平有效
+	input sys_clk,			//系统时钟
+	input sys_rst_n,		//系统复位，低电平有效
 	
-	output reg[3:0] led	//LED灯
+	output reg[3:0] led		//LED灯
 );
 
 reg[23:0] counter;

@@ -1,0 +1,48 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Code/FPGA_learning/flow_led/sim
+vflow_led
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 1@CBdWd`Yfm>1lMCAez2V1
+I7GHSZ_R9=Cag4ZV;KSeGi2
+Z1 dF:/Code/FPGA_learning/flow_led/sim/tb
+w1599620792
+8F:/Code/FPGA_learning/flow_led/rtl/flow_led.v
+FF:/Code/FPGA_learning/flow_led/rtl/flow_led.v
+L0 1
+Z2 OL;L;10.4;61
+!s108 1599620809.402000
+!s107 F:/Code/FPGA_learning/flow_led/rtl/flow_led.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/Code/FPGA_learning/flow_led/rtl/flow_led.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vflow_led_tb
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 i5PC3@ciZTnGbZ@zcM7=O1
+Ii<29;Nk2WN2XF=Q4A2FM01
+R1
+w1599619911
+8F:\Code\FPGA_learning\flow_led\sim\tb\flow_led_tb.v
+FF:\Code\FPGA_learning\flow_led\sim\tb\flow_led_tb.v
+L0 3
+R2
+!s108 1599620809.657000
+!s107 F:\Code\FPGA_learning\flow_led\sim\tb\flow_led_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:\Code\FPGA_learning\flow_led\sim\tb\flow_led_tb.v|
+!i113 0
+R3
