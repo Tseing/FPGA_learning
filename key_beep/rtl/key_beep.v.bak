@@ -1,4 +1,4 @@
-module key_beep(
+module top_key_beep(
     input      sys_clk,
     input      sys_rst_n,
     input      key,
@@ -46,9 +46,9 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     else begin
        key_reg  <= key;
        if(key_reg!=key)
-            delay_cnt <= 32'd1_000_000;
+            delay_cnt <= 32'd1_000_000
         else if(key_reg==key) begin
-            if(delay_cnt>32'd0)
+           if(delay_cnt>32'd0)
                 delay_cnt <= delay_cnt -1'b1;
             else
                 delay_cnt <= delay_cnt; 
@@ -72,14 +72,13 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
        end
     end
 end
-endmodule
 
 module beep_control(
-    input       sys_clk,
-    input       sys_rst_n,
-    input       key_flag,
-    input       key_value,
-    output  reg beep
+    input           sys_clk,
+    input           sys_rst_n,
+    input           key_flag,
+    input           key_value,
+    output  [reg]   beep
 );
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
@@ -88,4 +87,5 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     else if(key_flag&&(~key_value))
         beep <= ~beep;
 end
+
 endmodule

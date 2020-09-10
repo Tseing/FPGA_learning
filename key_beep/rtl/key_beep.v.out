@@ -1,0 +1,157 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "E:\iverilog\lib\ivl\system.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "E:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "E:\iverilog\lib\ivl\va_math.vpi";
+S_00000000009bb390 .scope module, "key_beep" "key_beep" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "sys_clk";
+    .port_info 1 /INPUT 1 "sys_rst_n";
+    .port_info 2 /INPUT 1 "key";
+    .port_info 3 /OUTPUT 1 "beep";
+v00000000009bc3e0_0 .net "beep", 0 0, v00000000009bb520_0;  1 drivers
+o000000000089d1e8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008e5840_0 .net "key", 0 0, o000000000089d1e8;  0 drivers
+v00000000008e58e0_0 .net "key_flag", 0 0, v00000000009bc0c0_0;  1 drivers
+v0000000000891f10_0 .net "key_value", 0 0, v00000000009bc200_0;  1 drivers
+o000000000089d068 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000000892050_0 .net "sys_clk", 0 0, o000000000089d068;  0 drivers
+o000000000089d098 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000000891a10_0 .net "sys_rst_n", 0 0, o000000000089d098;  0 drivers
+S_00000000009b6850 .scope module, "u_beep_control" "beep_control" 2 20, 2 77 0, S_00000000009bb390;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "sys_clk";
+    .port_info 1 /INPUT 1 "sys_rst_n";
+    .port_info 2 /INPUT 1 "key_flag";
+    .port_info 3 /INPUT 1 "key_value";
+    .port_info 4 /OUTPUT 1 "beep";
+v00000000009bb520_0 .var "beep", 0 0;
+v000000000089a530_0 .net "key_flag", 0 0, v00000000009bc0c0_0;  alias, 1 drivers
+v00000000009b69e0_0 .net "key_value", 0 0, v00000000009bc200_0;  alias, 1 drivers
+v00000000009b6a80_0 .net "sys_clk", 0 0, o000000000089d068;  alias, 0 drivers
+v00000000009b6b20_0 .net "sys_rst_n", 0 0, o000000000089d098;  alias, 0 drivers
+E_0000000000887830/0 .event negedge, v00000000009b6b20_0;
+E_0000000000887830/1 .event posedge, v00000000009b6a80_0;
+E_0000000000887830 .event/or E_0000000000887830/0, E_0000000000887830/1;
+S_00000000009bbf30 .scope module, "u_key_debounce" "key_debounce" 2 12, 2 30 0, S_00000000009bb390;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "sys_clk";
+    .port_info 1 /INPUT 1 "sys_rst_n";
+    .port_info 2 /INPUT 1 "key";
+    .port_info 3 /OUTPUT 1 "key_flag";
+    .port_info 4 /OUTPUT 1 "key_value";
+v00000000009b6bc0_0 .var "delay_cnt", 31 0;
+v00000000009b6c60_0 .net "key", 0 0, o000000000089d1e8;  alias, 0 drivers
+v00000000009bc0c0_0 .var "key_flag", 0 0;
+v00000000009bc160_0 .var "key_reg", 0 0;
+v00000000009bc200_0 .var "key_value", 0 0;
+v00000000009bc2a0_0 .net "sys_clk", 0 0, o000000000089d068;  alias, 0 drivers
+v00000000009bc340_0 .net "sys_rst_n", 0 0, o000000000089d098;  alias, 0 drivers
+    .scope S_00000000009bbf30;
+T_0 ;
+    %wait E_0000000000887830;
+    %load/vec4 v00000000009bc340_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v00000000009bc160_0, 0;
+    %pushi/vec4 0, 0, 32;
+    %assign/vec4 v00000000009b6bc0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v00000000009b6c60_0;
+    %assign/vec4 v00000000009bc160_0, 0;
+    %load/vec4 v00000000009bc160_0;
+    %load/vec4 v00000000009b6c60_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.2, 4;
+    %pushi/vec4 1000000, 0, 32;
+    %assign/vec4 v00000000009b6bc0_0, 0;
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v00000000009bc160_0;
+    %load/vec4 v00000000009b6c60_0;
+    %cmp/e;
+    %jmp/0xz  T_0.4, 4;
+    %load/vec4 v00000000009b6bc0_0;
+    %cmpi/u 0, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %jmp/0xz  T_0.6, 5;
+    %load/vec4 v00000000009b6bc0_0;
+    %subi 1, 0, 32;
+    %assign/vec4 v00000000009b6bc0_0, 0;
+    %jmp T_0.7;
+T_0.6 ;
+    %load/vec4 v00000000009b6bc0_0;
+    %assign/vec4 v00000000009b6bc0_0, 0;
+T_0.7 ;
+T_0.4 ;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_00000000009bbf30;
+T_1 ;
+    %wait E_0000000000887830;
+    %load/vec4 v00000000009bc340_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v00000000009bc0c0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v00000000009bc200_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v00000000009b6bc0_0;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_1.2, 4;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v00000000009bc0c0_0, 0;
+    %load/vec4 v00000000009b6c60_0;
+    %assign/vec4 v00000000009bc200_0, 0;
+    %jmp T_1.3;
+T_1.2 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v00000000009bc0c0_0, 0;
+    %load/vec4 v00000000009bc200_0;
+    %assign/vec4 v00000000009bc200_0, 0;
+T_1.3 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_00000000009b6850;
+T_2 ;
+    %wait E_0000000000887830;
+    %load/vec4 v00000000009b6b20_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v00000000009bb520_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v000000000089a530_0;
+    %load/vec4 v00000000009b69e0_0;
+    %inv;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.2, 8;
+    %load/vec4 v00000000009bb520_0;
+    %inv;
+    %assign/vec4 v00000000009bb520_0, 0;
+T_2.2 ;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "key_beep.v";
