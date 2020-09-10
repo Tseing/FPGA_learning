@@ -1,0 +1,48 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Code/FPGA_learning/flow_led/sim/tb
+vkey_led
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 14=fW0<L?RFgD@20@Tb_<2
+IK7NoU3_MDi9HHmSV<f_iF2
+Z1 dF:/Code/FPGA_learning/key_led/sim/tb
+w1599630175
+8F:/Code/FPGA_learning/key_led/rtl/key_led.v
+FF:/Code/FPGA_learning/key_led/rtl/key_led.v
+L0 1
+Z2 OL;L;10.4;61
+!s108 1599630469.020000
+!s107 F:/Code/FPGA_learning/key_led/rtl/key_led.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/Code/FPGA_learning/key_led/rtl/key_led.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vley_led_tb
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 fNh7?QR11bcW5]8>oY^B73
+IIle5D`_?HJAgR@A@GRh>P0
+R1
+w1599630464
+8F:/Code/FPGA_learning/key_led/sim/tb/key_led_tb.v
+FF:/Code/FPGA_learning/key_led/sim/tb/key_led_tb.v
+L0 3
+R2
+!s108 1599630469.148000
+!s107 F:/Code/FPGA_learning/key_led/sim/tb/key_led_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|F:/Code/FPGA_learning/key_led/sim/tb/key_led_tb.v|
+!i113 0
+R3
