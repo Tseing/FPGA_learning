@@ -1,0 +1,75 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "E:\iverilog\lib\ivl\system.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "E:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "E:\iverilog\lib\ivl\va_math.vpi";
+S_00000000008c89a0 .scope module, "touch_led" "touch_led" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "sys_clk";
+    .port_info 1 /INPUT 1 "sys_rst_n";
+    .port_info 2 /INPUT 1 "touch_key";
+    .port_info 3 /OUTPUT 1 "led";
+L_00000000008c7110 .functor NOT 1, v00000000008cb860_0, C4<0>, C4<0>, C4<0>;
+L_00000000010d4e10 .functor AND 1, L_00000000008c7110, v00000000008cb7c0_0, C4<1>, C4<1>;
+v00000000008c6ed0_0 .net *"_ivl_0", 0 0, L_00000000008c7110;  1 drivers
+v00000000008c6c10_0 .var "led", 0 0;
+o00000000010d7018 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008cb540_0 .net "sys_clk", 0 0, o00000000010d7018;  0 drivers
+o00000000010d7048 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008cb5e0_0 .net "sys_rst_n", 0 0, o00000000010d7048;  0 drivers
+v00000000008cb680_0 .net "touch_en", 0 0, L_00000000010d4e10;  1 drivers
+o00000000010d70a8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000000008cb720_0 .net "touch_key", 0 0, o00000000010d70a8;  0 drivers
+v00000000008cb7c0_0 .var "touch_key_d0", 0 0;
+v00000000008cb860_0 .var "touch_key_d1", 0 0;
+E_00000000008cd010/0 .event negedge, v00000000008cb5e0_0;
+E_00000000008cd010/1 .event posedge, v00000000008cb540_0;
+E_00000000008cd010 .event/or E_00000000008cd010/0, E_00000000008cd010/1;
+    .scope S_00000000008c89a0;
+T_0 ;
+    %wait E_00000000008cd010;
+    %load/vec4 v00000000008cb5e0_0;
+    %cmpi/e 0, 0, 1;
+    %jmp/0xz  T_0.0, 4;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v00000000008cb7c0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v00000000008cb860_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v00000000008cb720_0;
+    %assign/vec4 v00000000008cb7c0_0, 0;
+    %load/vec4 v00000000008cb7c0_0;
+    %assign/vec4 v00000000008cb860_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_00000000008c89a0;
+T_1 ;
+    %wait E_00000000008cd010;
+    %load/vec4 v00000000008cb5e0_0;
+    %cmpi/e 0, 0, 1;
+    %jmp/0xz  T_1.0, 4;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v00000000008c6c10_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v00000000008cb680_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.2, 8;
+    %load/vec4 v00000000008c6c10_0;
+    %inv;
+    %assign/vec4 v00000000008c6c10_0, 0;
+T_1.2 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "touch_led.v";
