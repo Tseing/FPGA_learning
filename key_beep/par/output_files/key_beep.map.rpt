@@ -1,5 +1,5 @@
 Analysis & Synthesis report for key_beep
-Thu Sep 10 09:57:44 2020
+Sat Sep 12 09:44:41 2020
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -43,7 +43,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 10 09:57:44 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 12 09:44:41 2020       ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                      ; key_beep                                    ;
 ; Top-level Entity Name              ; key_beep                                    ;
@@ -266,7 +266,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Thu Sep 10 09:57:42 2020
+    Info: Processing started: Sat Sep 12 09:44:38 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off key_beep -c key_beep
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 3 design units, including 3 entities, in source file /code/fpga_learning/key_beep/rtl/key_beep.v
@@ -287,9 +287,9 @@ Info (21057): Implemented 53 device resources after synthesis - the final resour
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 49 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4652 megabytes
-    Info: Processing ended: Thu Sep 10 09:57:44 2020
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4643 megabytes
+    Info: Processing ended: Sat Sep 12 09:44:41 2020
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
