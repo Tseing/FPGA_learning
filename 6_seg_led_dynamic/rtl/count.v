@@ -7,11 +7,12 @@ module count(
     output  reg         sign
 );
 
-parameter MAX_NUM = 23'd5000_000;
+parameter MAX_NUM = 23'd5000_000;               //计数器最大值，100ms
 
-reg [22:0]  cnt;
-reg         flag;
+reg [22:0]  cnt;                                //计数器
+reg         flag;                               //计数标志
 
+//计数100ms
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         cnt     <= 23'b0;
@@ -27,6 +28,7 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
+//改变数码管数据，从0累加至999999
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         data    <= 20'b0;
@@ -35,10 +37,10 @@ always @(posedge clk or negedge rst_n) begin
         sign    <= 1'b0;
     end
     else begin
-        point   <= 6'b000000;
-        en      <= 1'b1;
-        sign    <= 1'b0;
-        if(flag) begin
+        point   <= 6'b000000;                   //不显示小数点
+        en      <= 1'b1;                        //打开显示使能
+        sign    <= 1'b0;                        //不显示负号
+        if(flag) begin                          //每100ms累加一次数码管数据
             if(data<20'd999999)
                 data <= data + 1'b1;
             else

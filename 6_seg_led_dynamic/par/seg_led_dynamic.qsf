@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE10F17C8
-set_global_assignment -name TOP_LEVEL_ENTITY seg_led_dynamic
+set_global_assignment -name TOP_LEVEL_ENTITY top_seg_led
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:06:32  SEPTEMBER 13, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
@@ -50,3 +50,10 @@ set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name VERILOG_FILE ../rtl/top_seg_led.v
+set_global_assignment -name VERILOG_FILE ../rtl/seg_led.v
+set_global_assignment -name VERILOG_FILE ../rtl/count.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
