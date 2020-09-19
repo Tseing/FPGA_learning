@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sun Sep 13 21:15:26 2020
+Fitter Status : Successful - Tue Sep 15 17:06:20 2020
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : seg_led_dynamic
 Top-level Entity Name : top_seg_led
 Family : Cyclone IV E
 Device : EP4CE10F17C8
 Timing Models : Final
-Total logic elements : 2,011 / 10,320 ( 19 % )
+Total logic elements : 2,013 / 10,320 ( 20 % )
     Total combinational functions : 2,010 / 10,320 ( 19 % )
     Dedicated logic registers : 109 / 10,320 ( 1 % )
 Total registers : 109

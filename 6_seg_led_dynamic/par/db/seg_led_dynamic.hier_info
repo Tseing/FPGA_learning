@@ -1,20 +1,20 @@
 |top_seg_led
 sys_clk => sys_clk.IN2
 sys_rst_n => sys_rst_n.IN2
-seg_sel[0] <= seg_led:u_seg_led.seg_sel
-seg_sel[1] <= seg_led:u_seg_led.seg_sel
-seg_sel[2] <= seg_led:u_seg_led.seg_sel
-seg_sel[3] <= seg_led:u_seg_led.seg_sel
-seg_sel[4] <= seg_led:u_seg_led.seg_sel
-seg_sel[5] <= seg_led:u_seg_led.seg_sel
-seg_led[0] <= seg_led:u_seg_led.seg_led
-seg_led[1] <= seg_led:u_seg_led.seg_led
-seg_led[2] <= seg_led:u_seg_led.seg_led
-seg_led[3] <= seg_led:u_seg_led.seg_led
-seg_led[4] <= seg_led:u_seg_led.seg_led
-seg_led[5] <= seg_led:u_seg_led.seg_led
-seg_led[6] <= seg_led:u_seg_led.seg_led
-seg_led[7] <= seg_led:u_seg_led.seg_led
+seg_sel[0] << seg_led:u_seg_led.seg_sel
+seg_sel[1] << seg_led:u_seg_led.seg_sel
+seg_sel[2] << seg_led:u_seg_led.seg_sel
+seg_sel[3] << seg_led:u_seg_led.seg_sel
+seg_sel[4] << seg_led:u_seg_led.seg_sel
+seg_sel[5] << seg_led:u_seg_led.seg_sel
+seg_led[0] << seg_led:u_seg_led.seg_led
+seg_led[1] << seg_led:u_seg_led.seg_led
+seg_led[2] << seg_led:u_seg_led.seg_led
+seg_led[3] << seg_led:u_seg_led.seg_led
+seg_led[4] << seg_led:u_seg_led.seg_led
+seg_led[5] << seg_led:u_seg_led.seg_led
+seg_led[6] << seg_led:u_seg_led.seg_led
+seg_led[7] << seg_led:u_seg_led.seg_led
 
 
 |top_seg_led|seg_led:u_seg_led
