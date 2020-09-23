@@ -6,8 +6,8 @@
 - [x] 5. seg_led_static __静态数码管显示__
 - [x] 6. seg_led_dynamic __动态数码管显示__
 - [x] 7. ip_pll __ip核PLL__
-- [ ] 8. ip_ram __ip核RAM__
-- [ ] 9. ip_fifo __ip核FIFO__
+- [x] 8. ip_ram __ip核RAM__
+- [x] 9. ip_fifo __ip核FIFO__
 - [ ] 10. uart __UART串口通信__
 - [ ] 11. vga_colorbar __VGA彩条显示__
 - [ ] 12. vga_blockmove __VGA方块移动__
