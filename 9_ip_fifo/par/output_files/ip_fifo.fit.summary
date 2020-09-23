@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Sep 22 21:28:27 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : ip_fifo
+Top-level Entity Name : ip_fifo
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 1,229 / 10,320 ( 12 % )
+    Total combinational functions : 708 / 10,320 ( 7 % )
+    Dedicated logic registers : 1,029 / 10,320 ( 10 % )
+Total registers : 1029
+Total pins : 2 / 180 ( 1 % )
+Total virtual pins : 0
+Total memory bits : 79,872 / 423,936 ( 19 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
