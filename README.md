@@ -8,7 +8,7 @@
 - [x] 7. ip_pll __ip核PLL__
 - [x] 8. ip_ram __ip核RAM__
 - [x] 9. ip_fifo __ip核FIFO__
-- [ ] 10. uart __UART串口通信__
+- [x] 10. uart __UART串口通信__
 - [ ] 11. vga_colorbar __VGA彩条显示__
 - [ ] 12. vga_blockmove __VGA方块移动__
 - [ ] 13. vga_char __VGA字符显示__
