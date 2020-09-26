@@ -83,7 +83,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
         uart_txd <= 1'b1;
     else if(tx_flag)
         case(tx_cnt)
-            4'd0: uart_txd <= 1'b1;             //起始位
+            4'd0: uart_txd <= 1'b0;             //起始位
             4'd1: uart_txd <= tx_data[0];       //数据最低位
             4'd2: uart_txd <= tx_data[1];
             4'd3: uart_txd <= tx_data[2];

@@ -21,12 +21,16 @@ reg [7:0]   rxdata;                             //接收数据寄存器
 wire start_flag;
 
 //捕获接收端口下降沿（起始位），得到一个时钟周期的脉冲信号，有旧数据无新数据时置1（检测下降沿）
-assign srart_flag = uart_rxd_d1 & (~uart_rxd_d0);
+assign start_flag = uart_rxd_d1 & (~uart_rxd_d0);
 
 //对uart接收端口的数据（电平）延迟两个时钟周期
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n) begin
         uart_rxd_d0 <= 1'b0;
+        uart_rxd_d1 <= 1'b0;
+    end
+    else begin
+        uart_rxd_d0 <= uart_rxd;
         uart_rxd_d1 <= uart_rxd_d0;
     end
 end
@@ -34,7 +38,7 @@ end
 //当脉冲start_flag到达时，进入接收过程
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n)
-        rx_flag <= 1'b1;
+        rx_flag <= 1'b0;
     else begin
         if(start_flag)                          //进入接收过程
             rx_flag <= 1'b1;
