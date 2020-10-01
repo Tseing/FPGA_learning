@@ -13,7 +13,7 @@
 - [ ] 12. vga_blockmove __VGA方块移动__
 - [ ] 13. vga_char __VGA字符显示__
 - [ ] 14. vga_rom_pic __VGA图片显示（ROM）__
-- [ ] 15. lcd_rgb_colorbar __RGB TFT-LCD彩条显示__
+- [x] 15. lcd_rgb_colorbar __RGB TFT-LCD彩条显示__
 - [ ] 16. lcd_rgb_char __RGB TFT-LCD字符显示__
 - [ ] 17. remote_rcv __红外遥控__
 - [ ] 18. temp_disp __DS18B20数字温度传感器__
