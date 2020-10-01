@@ -175,8 +175,8 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=46" 
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_E1 -to sys_clk
 set_location_assignment PIN_M1 -to sys_rst_n
-set_location_assignment PIN_N5 -to uart_rxd
-set_location_assignment PIN_M7 -to uart_txd
+set_location_assignment PIN_P9 -to uart_rxd
+set_location_assignment PIN_N9 -to uart_txd
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "clk_div:u_pll|c0" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=1024" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=1024" -section_id auto_signaltap_0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Oct 01 19:56:16 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : lcd_rgb_colorbar
+Top-level Entity Name : lcd_rgb_colorbar
+Family : Cyclone IV E
+Total logic elements : 981
+    Total combinational functions : 615
+    Dedicated logic registers : 736
+Total registers : 736
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 86,016
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
